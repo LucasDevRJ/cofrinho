@@ -2,13 +2,13 @@ package cofrinho;
 
 public class Real extends Moeda {
 	
-	public Real(double valor) {
-		super(valor);
+	public Real(String nome, double valor) {
+		super(nome, valor);
 	}
 
 	@Override
 	public void exibeInformacoes() {
-		System.out.println("Moeda: Real");
+		System.out.println("Moeda: " + getNome());
 		System.out.println("Valor: R$ " + getValor());
 	}
 

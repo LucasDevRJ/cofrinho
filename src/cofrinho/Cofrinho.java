@@ -8,6 +8,7 @@ public class Cofrinho {
 	private double valorConvertidoEmReais = 0.0;
 	
 	public ArrayList<Moeda> adicionarMoeda(Moeda moeda) {
+		System.out.println("A moeda " + moeda.getNome() + " com o valor de " + moeda.getValor() + " foi adicionada com sucesso!");
 		this.moedas.add(moeda);
 		adicionaValorASerConvertido(moeda);
 		return this.moedas;
@@ -29,7 +30,11 @@ public class Cofrinho {
 		}
 	}
 	
-	public String totalConvertido() {
-		return "O valor total convertido em Reais é R$ " + this.valorConvertidoEmReais;
+	public void totalConvertido() {
+		System.out.println("O valor total convertido em Reais é R$ " + this.valorConvertidoEmReais);
+	}
+	
+	public void exibeQuantidadeMoedasNoCofrinho() {
+		System.out.println("Quantidade de Moedas: " + this.moedas.size());
 	}
 }
