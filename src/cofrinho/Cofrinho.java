@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Cofrinho {
 
 	private ArrayList<Moeda> moedas = new ArrayList<Moeda>();
-	//atributo acumulador de conversões
+	//atributo acumulador de conversões e de reais
 	private double valorConvertidoEmReais = 0.0;
 	
 	public ArrayList<Moeda> getMoedas() {
@@ -15,6 +15,7 @@ public class Cofrinho {
 	public void adicionarMoeda(Moeda moeda) {
 		System.out.println("Moeda adicionada com sucesso!");
 		this.moedas.add(moeda);
+		//acumulando moedas no geral
 		this.valorConvertidoEmReais += moeda.converter();
 	}
 	
@@ -29,6 +30,7 @@ public class Cofrinho {
 		}
 	}
 	
+	//exibe o total convertido das duas moedas mais a quantidade em reais
 	public void totalConvertido() {
 		System.out.printf("O valor total convertido em Reais é R$ %.2f" , this.valorConvertidoEmReais);
 	}

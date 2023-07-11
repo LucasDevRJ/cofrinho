@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Principal {
 	
 	static Cofrinho cofrinho = new Cofrinho();
+	public static boolean programaEstaRodando = true;
 	public static Scanner entrada = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -20,8 +21,9 @@ public class Principal {
 			System.out.println("1 - Adicionar Moeda");
 			System.out.println("2 - Remover Moeda");
 			System.out.println("3 - Listar Moedas");
-			System.out.println("4 - Total Convertido");
-			System.out.println("5 - Sair");
+			System.out.println("4 - Total Convertido em Reais");
+			System.out.println("5 - Exibir Quantidade de Moedas no Cofrinho");
+			System.out.println("6 - Sair");
 			System.out.println("------------------------------------------------------");
 			System.out.print("Digite a opção desejada: ");
 			opcao = entrada.nextInt();
@@ -64,11 +66,20 @@ public class Principal {
 					System.out.println();
 				break;
 				
+				case 5:
+					cofrinho.exibeQuantidadeMoedasNoCofrinho();
+					System.out.println();
+				break;
+				
+				case 6:
+					finalizaPrograma();
+				break;
+				
 				default:
 					System.out.println("Opção inválida!!");
 				
 			}
-		} while (opcao != 5);
+		} while (opcao != 5 && programaEstaRodando == true);
 	}
 	
 	public static void exibeMenuMoedas() {
@@ -112,7 +123,7 @@ public class Principal {
 			} 
 			
 			System.out.print("Digite o valor em Euro: ");
-			double valor = entrada.nextDouble();
+			double valor;
 			
 			try {
 				valor = entrada.nextDouble();
@@ -141,5 +152,10 @@ public class Principal {
 		}
 		
 		exibeMenuCofrinho();
+	}
+	
+	public static void finalizaPrograma() {
+		System.out.println("Programa finalizado.");
+		programaEstaRodando = false;
 	}
 }
