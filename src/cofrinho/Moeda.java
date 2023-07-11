@@ -1,7 +1,5 @@
 package cofrinho;
 
-import java.util.Scanner;
-
 public abstract class Moeda {
 
 	private String nome;
@@ -12,6 +10,7 @@ public abstract class Moeda {
 		if (valor <= 0.0) {
 			throw new IllegalArgumentException("Insira um valor maior que 0!");
 		}
+		this.valor = valor;
 	}
 	
 	public String getNome() {

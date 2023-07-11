@@ -13,8 +13,6 @@ public class Real extends Moeda {
 	//É obrigatório que ele tenha os métodos abstratos dela
 	@Override
 	public double converter() {
-		double conversaoReal = this.getValor() * 1;
-		System.out.println("O valor R$ " + this.getValor() + " convertido em Reais é R$ " + conversaoReal);
-		return conversaoReal;
+		return this.getValor() * 1;
 	}
 }

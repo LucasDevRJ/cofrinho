@@ -8,6 +8,9 @@ public class Euro extends Moeda{
 	public Euro(double valor, double cotacaoAtual) {
 		super(valor);
 		this.setNome("Euro");
+		if (cotacaoAtual < 0.0) {
+			throw new IllegalArgumentException("Insira um valor maior que 0!");
+		}
 		this.cotacaoAtual = cotacaoAtual;
 	}
 

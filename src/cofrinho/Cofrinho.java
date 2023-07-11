@@ -8,6 +8,10 @@ public class Cofrinho {
 	//atributo acumulador de conversões
 	private double valorConvertidoEmReais = 0.0;
 	
+	public ArrayList<Moeda> getMoedas() {
+		return moedas;
+	}
+	
 	public void adicionarMoeda(Moeda moeda) {
 		System.out.println("Moeda adicionada com sucesso!");
 		this.moedas.add(moeda);
@@ -15,13 +19,13 @@ public class Cofrinho {
 	}
 	
 	public void removerMoeda(Moeda moeda) {
-		//System.out.println("A moeda com o ID " + moeda.getId() + " foi removida com sucesso!!");
+		System.out.println("Moeda removida com sucesso!");
 		this.moedas.remove(moeda);
 	}
 	
 	public void listagemMoedas() {
-		for (Moeda moeda : moedas) {
-			moeda.exibeInformacoes();
+		for (int i = 0; i < this.moedas.size(); i++) {
+			this.moedas.get(i).exibeInformacoes();
 		}
 	}
 	
