@@ -1,5 +1,6 @@
 package cofrinho;
 
-public class Moeda {
+public abstract class Moeda {
 
+	private double valor;
 }
