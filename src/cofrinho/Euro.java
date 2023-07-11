@@ -1,11 +1,13 @@
 package cofrinho;
 
 public class Euro extends Moeda{
-	
+
+	//cotação do Euro em relação ao Real para fazer conversão
 	private double cotacaoAtual;
 
-	public Euro(String nome, double valor, double cotacaoAtual) {
-		super(nome, valor);
+	public Euro(double valor, double cotacaoAtual) {
+		super(valor);
+		this.setNome("Euro");
 		this.cotacaoAtual = cotacaoAtual;
 	}
 
@@ -15,12 +17,4 @@ public class Euro extends Moeda{
 		System.out.printf("O valor de EUR %.2f convertido em Reais é R$ %.2f\n", this.getValor(), conversaoReal);
 		return conversaoReal;
 	}
-	
-	@Override
-	public void exibeInformacoes() {
-		System.out.println("Nome: " + this.getNome());
-		System.out.println("Valor: EUR " + this.getValor());
-		System.out.println("Cotação: " + this.cotacaoAtual);
-	}
-
 }

@@ -5,16 +5,17 @@ import java.util.ArrayList;
 public class Cofrinho {
 
 	private ArrayList<Moeda> moedas = new ArrayList<Moeda>();
+	//atributo acumulador de conversões
 	private double valorConvertidoEmReais = 0.0;
 	
 	public void adicionarMoeda(Moeda moeda) {
-		System.out.println("A moeda com o ID " + moeda.getId() + " foi adicionada com sucesso!!");
+		System.out.println("Moeda adicionada com sucesso!");
 		this.moedas.add(moeda);
+		this.valorConvertidoEmReais += moeda.converter();
 	}
 	
 	public void removerMoeda(Moeda moeda) {
-		System.out.println("A moeda com o ID " + moeda.getId() + " foi removida com sucesso!!");
-		this.valorConvertidoEmReais -= moeda.getValor();
+		//System.out.println("A moeda com o ID " + moeda.getId() + " foi removida com sucesso!!");
 		this.moedas.remove(moeda);
 	}
 	
@@ -22,10 +23,6 @@ public class Cofrinho {
 		for (Moeda moeda : moedas) {
 			moeda.exibeInformacoes();
 		}
-	}
-	
-	public void adicionaValorConvertidoEmReal(Moeda moeda) {
-		this.valorConvertidoEmReais += moeda.converter();
 	}
 	
 	public void totalConvertido() {

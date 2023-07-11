@@ -1,15 +1,10 @@
 package cofrinho;
 
 public class Real extends Moeda {
-	
-	public Real(String nome, double valor) {
-		super(nome, valor);
-	}
 
-	@Override
-	public void exibeInformacoes() {
-		System.out.println("Moeda: " + getNome());
-		System.out.println("Valor: R$ " + getValor());
+	public Real(double valor) {
+		super(valor);
+		this.setNome("Real");
 	}
 
 	//Como a ideia do cofrinho é converter moedas estrangeiras 
